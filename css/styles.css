@@ -1,0 +1,134 @@
+:root {
+  --cyan: 179 62% 43%;
+  --yellow: hsl(71, 73%, 54%);
+
+  --gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-size: 1.6rem;
+  font-family: "Karla", sans-serif;
+  background-color: var(--gray);
+  font-weight: 400;
+}
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+h3,
+h4,
+p {
+  margin: 0;
+}
+.color-cyan {
+  color: hsl(var(--cyan));
+}
+.color-yellow {
+  color: var(--yellow);
+}
+.color-gray {
+  color: var(--gray);
+}
+.color-gray-grayish {
+  color: var(--grayish-blue);
+}
+.color-white {
+  color: white;
+}
+.cards {
+  width: calc(100% - 6.4rem);
+  max-width: 63.8rem;
+  margin-block: 7rem;
+  border-radius: 0.8rem;
+  overflow: hidden;
+}
+.card {
+  background-color: var(--bg-card);
+  padding: 2.6rem;
+}
+.card__title {
+  margin-bottom: 3rem;
+}
+.card__subtitle {
+  margin-bottom: 2.5rem;
+}
+.card__description {
+  line-height: 1.6;
+  font-size: 1.3rem;
+}
+.card__price {
+  font-size: 2.8rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+.card__month {
+  font-size: 1.6rem;
+  color: var(--gray);
+}
+.card__details {
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+.card__link {
+  text-decoration: none;
+  background-color: var(--yellow);
+  padding: 1.3rem;
+  display: block;
+  text-align: center;
+  border-radius: 0.8rem;
+}
+.card__list {
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+.card--white {
+  --bg-card: white;
+}
+.card--cyan {
+  --bg-card: hsl(var(--cyan));
+}
+.card--cyan-light {
+  --bg-card: hsl(var(--cyan) / 0.8);
+}
+@media screen and (min-width: 37.5em) {
+  .cards {
+    display: grid;
+    grid-template:
+      "white white" auto
+      "cyan cyan-light" auto / 1fr 1fr;
+  }
+  .card--white {
+    grid-area: white;
+  }
+  .card--cyan {
+    grid-area: cyan;
+  }
+  .card--cyan-light {
+    grid-area: cyan-light;
+  }
+  .card {
+    padding: 4.2rem 4rem;
+  }
+  .card__title {
+    font-size: 2rem;
+  }
+  .card__description {
+    font-size: 1.6rem;
+  }
+}
